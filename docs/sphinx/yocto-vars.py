@@ -65,7 +65,7 @@ def expand(val, src):
 def setup(app: Sphinx):
     global poky_hash
 
-    with open("tanowrt.yaml") as file:
+    with open(Path(app.srcdir) / "tanowrt.yaml") as file:
         hasher = md5()
         buff = file.read()
         hasher.update(buff.encode('utf-8'))
